@@ -1,14 +1,14 @@
 <template>
   <section class="container">
-    <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
     <h1 class="title">
-      User
+      Post
     </h1>
     <h2 class="info">
-      {{ user.name }}
+      {{ post.title }}
+      {{ post.description }}
     </h2>
-    <nuxt-link class="button" to="/">
-      Users
+    <nuxt-link class="button" to="/posts">
+      Posts
     </nuxt-link>
   </section>
 </template>
@@ -19,17 +19,17 @@ import axios from '~/plugins/axios'
 export default {
   name: 'id',
   asyncData ({ params, error }) {
-    return axios.get('/api/users/' + params.id)
+    return axios.get('/api/posts/' + params.id)
       .then((res) => {
-        return { user: res.data }
+        return { post: res.data }
       })
       .catch((e) => {
-        error({ statusCode: 404, message: 'User not found' })
+        error({ statusCode: 404, message: 'post not found' })
       })
   },
   head () {
     return {
-      title: `User: ${this.user.name}`
+      title: `post: ${this.post.title}`
     }
   }
 }

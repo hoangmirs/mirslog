@@ -5,7 +5,7 @@
   "author": "Hoang Mirs <hoang.mirs@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nodemon --watch api --exec \"nuxt\"",
     "build": "nuxt build",
     "start": "nuxt build && nuxt start",
     "precommit": "npm run lint",
@@ -15,7 +15,9 @@
     "axios": "^0.16.2",
     "cross-env": "^5.0.1",
     "express": "^4.15.3",
+    "nodemon": "^1.18.3",
     "nuxt": "latest",
+    "nuxt-buefy": "^0.1.0",
     "source-map-support": "^0.4.15"
   },
   "devDependencies": {

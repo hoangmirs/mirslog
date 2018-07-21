@@ -39,5 +39,10 @@ module.exports = {
   serverMiddleware: [
     // API middleware
     '~/api/index.js'
-  ]
+  ],
+  modules: [
+    // Simple usage
+    'nuxt-buefy',
+    ['nuxt-buefy', { /* buefy options */ }]
+  ],
 }
